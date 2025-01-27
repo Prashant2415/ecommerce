@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceland&family=Lexend+Giga:wght@100..900&family=Oxanium:wght@200..800&family=Playwrite+AU+VIC+Guides&family=Quicksand:wght@300..700&display=swap');
+#root {
+  max-width: 1440px;
+  height: 100%;
+  background-color: #f9fafa;
+  font-family: "Iceland", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.home-container{
+  height: 10%;
+  margin: 0 2rem;
+}

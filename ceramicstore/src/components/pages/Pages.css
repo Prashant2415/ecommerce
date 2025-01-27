@@ -1,0 +1,95 @@
+/* home Page */
+.home-page-container{
+    position: relative;
+}
+.carousel-container{
+    width: 100%;
+    height: 20rem;
+    position: relative;
+}
+.carousel-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 70%;
+}
+.carousel-text{
+    position: absolute;
+    color: white;
+    top: 20%;
+    left: 35%;
+    font-size: 50px;
+    width: 25rem;
+}
+.shop-now{
+    position: relative;
+    top: -40%;
+    left: 46%;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    font-family: "Iceland", serif;
+    font-weight: 400;
+    font-style: normal;
+    border: none;
+}
+.shop-now:hover{
+    background: darkgray;
+}
+.description{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.description-heading{
+    margin: 1rem 0rem 0rem 0rem;
+}
+.description-para{
+    margin: 0 2rem;
+}
+.product-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 0rem 0rem 0rem 2rem;
+}
+.product-card{
+    width: 15rem;
+    height: 15rem;
+}
+.product-image-container{
+    width: 100%;
+    height: 10rem;
+}
+.product-image{
+    width: 100%;
+    height: 100%;
+}
+.product-content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.product-name{
+    margin: 0;
+}
+.product-price{
+    margin: 0;
+    color: darkgray;
+}
+.product-view{
+    border: none;
+    background: #000;
+    color: #fff;
+    padding: 2px;
+    width: 100%;
+    font-family: "Iceland", serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+}
+.product-view:hover{
+    background: darkgray;
+}

@@ -1,0 +1,31 @@
+/* header css */
+.header-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.logo{
+    /* width: 5rem;
+    height: 5rem; */
+    font-size: 22px;
+    font-weight: 700;
+}
+.header-links{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+}
+.links{
+    text-decoration: none;
+    color: #000;
+}
+.links:hover{
+    color: lightgray;
+}
+/* footer css */
+.footer-container{
+    background: #000;
+    color: #fff;
+    height: 4rem;
+}
