@@ -6,6 +6,7 @@ const Product = () => {
     const productDetail = value.state;
     console.log(productDetail)
     const { id, productname, description, price, imageurl, category } = productDetail.product;
+    window.scrollTo({top:0, behavior: "smooth"})
     return (
         <div className='product-item-container'>
             <div className="breadcrumb-container">
