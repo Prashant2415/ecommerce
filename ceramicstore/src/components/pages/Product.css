@@ -1,0 +1,95 @@
+.product-item-container{
+
+}
+.breadcrumb-container{
+    margin-bottom: 1rem;
+}
+.breadcrumb{
+    color: darkgray;
+    text-decoration: none;
+}
+.item-detail-container{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+}
+.item-image-container{
+
+}
+.item-image{
+
+}
+.item-container{
+
+}
+.item-details-container{
+    width: 50%;
+    padding: 0 1rem;
+}
+.item-name{
+    font-size: 28px;
+    color: darkgray;
+}
+.item-price{
+    font-size: 22px;
+}
+.item-description{
+    margin-bottom: 1rem !important;
+    font-size: 10px;
+}
+.add-to-cart{
+    width: 8rem;
+    background: #fff;
+    border: 1px solid darkgray;
+    padding: 4px;
+    font-family: "Iceland", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+.add-to-cart:hover{
+    background: #000;
+    color: #fff;
+}
+.buy-now{
+    width: 8rem;
+    background: #000;
+    color: #fff;
+    font-family: "Iceland", serif;
+    font-weight: 400;
+    font-style: normal;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.buy-now:hover{
+    background: darkgray;
+    color: #000;
+}
+.p-top{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.policy-container{
+    display: flex;
+    gap: 1rem;
+}
+.policy-heading{
+    margin: 0;
+}
+.product-info{
+    border-right: 1px solid lightgray;
+    padding: 0rem 0.5rem 0rem 0rem;
+}
+.return-refund-policy{
+    border-right: 1px solid lightgray;
+    padding: 0rem 0.5rem 0rem 0rem;
+}
+.shipping-info{
+
+}
+.policy-info{
+    font-size: 10px;
+}

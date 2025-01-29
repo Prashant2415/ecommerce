@@ -1,9 +1,15 @@
 import React from 'react'
+import {useNavigate} from "react-router-dom"
 import homeImage from "../../images/home.webp"
 import "./Pages.css"
 import { DummyData } from '../DummyData'
 const Home = () => {
   const products = DummyData;
+  const navigate = useNavigate();
+  const handleView = (product)=>{
+    console.log("Product ",product);
+    navigate("/product",{state: {product}});
+  }
   return (
     <div className='home-page-container'>
       <div className="carousel-container">
@@ -25,7 +31,7 @@ const Home = () => {
               <div className="product-content">
                 <p className='product-name'>{product.productname}</p>
                 <p className='product-price'>{`$${product.price}`}</p>
-                <button className='product-view'>View</button>
+                <button className='product-view' onClick={()=>{handleView(product)}}>View</button>
               </div>
             </div>
           )
