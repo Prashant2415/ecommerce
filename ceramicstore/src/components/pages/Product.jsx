@@ -1,12 +1,18 @@
 import React from 'react'
 import { useLocation , Link} from 'react-router-dom'
 import "./Product.css"
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../redux/addtocartSlicer';
 const Product = () => {
     const value = useLocation();
     const productDetail = value.state;
     console.log(productDetail)
     const { id, productname, description, price, imageurl, category } = productDetail.product;
     window.scrollTo({top:0, behavior: "smooth"})
+
+    const dispatch = useDispatch();
+    const cartValue = useSelector((state)=> state.addtocartSlicer);
+    console.log(cartValue)
     return (
         <div className='product-item-container'>
             <div className="breadcrumb-container">
@@ -20,7 +26,7 @@ const Product = () => {
                     <p className='item-name p-top'>{productname}</p>
                     <p className='item-price p-top'>${price}</p>
                     <p className='item-description p-top'>{description}</p>
-                    <button className='add-to-cart'>Add to Cart</button><br />
+                    <button className='add-to-cart' onClick={()=> dispatch(addToCart(productDetail))}>Add to Cart</button><br />
                     <button className='buy-now'>Buy Now</button>
                 </div>
                     <div className="policy-container">

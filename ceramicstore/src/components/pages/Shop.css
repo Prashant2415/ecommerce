@@ -1,0 +1,45 @@
+.shopping-container{
+
+}
+.search-filter-container{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.search-container{
+
+}
+.search-product{
+    padding: 4px 6px;
+    width: 16rem;
+    border: none;
+    outline: 0.5px solid lightgray;
+    font-size: 12px;
+    font-family: "Iceland", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.filter-container{
+
+}
+.filter{
+    padding: 4px 6px;
+    border: none;
+    outline: 0.5px solid lightgray;
+    font-size: 12px;
+    font-family: "Iceland", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.filter-option{
+
+}
+.shopping-product-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.shopping-card{
+    cursor: pointer;
+}
