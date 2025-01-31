@@ -15,7 +15,7 @@ const Home = () => {
       <div className="carousel-container">
         <img className='carousel-image' src={homeImage} alt="home image" />
         <p className='carousel-text'>Cermaic Studio</p>
-        <button className='shop-now'>Shop Now</button>
+        <button className='shop-now' onClick={()=>{navigate("/shop")}}>Shop Now</button>
       </div>
       <div className="description">
         <h3 className='description-heading'>Out Collection</h3>

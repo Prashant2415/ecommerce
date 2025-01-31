@@ -4,24 +4,26 @@ import "./Shop.css"
 import "./Product.css"
 import { DummyData } from '../DummyData'
 import { useDispatch, useSelector } from 'react-redux'
-import productSlicer, { addProduct, sortProduct } from '../../redux/productSlicer'
+import productSlicer, { addProduct, searchProduct, sortProduct } from '../../redux/productSlicer'
 import { addToCart } from '../../redux/addtocartSlicer'
 const Shop = () => {
-    // const products = DummyData;
+    
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const products = useSelector((state)=> state.productSlicer);
+    const products = useSelector((state)=> state.productSlicer.data);
     
     const handleView = (product)=>{
         navigate("/product", {state: {product}})
     }
-    const cartValue = useSelector((state)=> state.addtocartSlicer);
-    console.log(cartValue)
+
+    const search = useSelector((state)=> state.productSlicer.searchItem);
+    const productData = products.filter((item)=> item.productname.toLowerCase().includes(search.toLowerCase()));
+
     return (
         <div className='shopping-container'>
             <div className="search-filter-container">
                 <div className="search-container">
-                    <input className='search-product' type="text" placeholder='Search product......'/>
+                    <input className='search-product' type="text" placeholder='Search product......' value={search} onChange={(e)=> dispatch(searchProduct(e.target.value))}/>
                 </div>
                 <div className="filter-container">
                     <select className='filter' onChange={(e)=>dispatch(sortProduct(e.target.value))}>
@@ -31,7 +33,7 @@ const Shop = () => {
                 </div>
             </div>
             <div className="shopping-product-container">
-                    {products.map((product, index) => {
+                    {productData.map((product, index) => {
                         return (
                             <div className="product-card shopping-card" key={index}>
                                 <div className="product-image-container" onClick={()=>{handleView(product)}}>

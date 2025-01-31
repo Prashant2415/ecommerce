@@ -3,23 +3,29 @@ import { DummyData } from "../components/DummyData";
 const data = DummyData;
 const productSlicer = createSlice({
     name: "productSlicer",
-    initialState: data,
+    initialState: {
+        searchItem:"",
+        data
+    },
     reducers: {
         addProduct: (state, action)=>{
-            state.push(action.payload);
+            state.data.push(action.payload);
         },
         sortProduct: (state,action)=>{
             if(action.payload == "Ascending")
             {
-                state.sort((a,b)=> a.id - b.id);
+                state.data.sort((a,b)=> a.id - b.id);
             }
             else{
-                state.sort((a,b)=> b.id - a.id);
+                state.data.sort((a,b)=> b.id - a.id);
             }
         },
-        
+        searchProduct: (state, action)=>{
+            console.log(action.payload);
+            state.searchItem = action.payload;
+        }
     }
 })
 
-export const {addProduct, sortProduct} = productSlicer.actions;
+export const {addProduct, sortProduct, searchProduct} = productSlicer.actions;
 export default productSlicer.reducer;

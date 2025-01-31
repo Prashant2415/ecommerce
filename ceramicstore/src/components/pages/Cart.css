@@ -1,0 +1,107 @@
+.cart-container{
+    display: flex;
+    gap: 4rem;
+    height: 72vh;
+}
+.cart-summary-container{
+    padding: 0rem 1rem 0rem 0rem;
+    border-right: 1px solid darkgray;
+}
+.cart{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 3rem;
+    padding: 0.5rem;
+    border: 1px solid darkgray;
+    margin-bottom: 0.5rem;
+}
+.cart-image{
+    width: 4rem;
+    height: 4rem;
+}
+.cart-detail{
+
+}
+.cart-productname{
+    margin: 0;
+    width: 9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 2rem;
+}
+.cart-price{
+    margin: 0;
+}
+.quantity-container{
+
+}
+.quantity-heading{
+    margin: 0;
+}
+.quantity-button{
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+}
+.decrement{
+    /* border: 1px solid darkgrey; */
+}
+.quantity{
+
+}
+.increment{
+    /* border: 1px solid darkgrey; */
+}
+.total-value{
+
+}
+.total{
+    margin: 0;
+}
+.heading{
+    margin: 0;
+}
+.remove-product{
+    
+}
+.summary{
+    width: 100%;
+}
+.heading-color{
+    color: darkgray;
+}
+.subtotal-container{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4rem;
+}
+.subtotal-value{
+
+}
+.summary-total{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4rem;
+    margin-bottom: 1rem;
+}
+.checkout{
+    width:100%;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0rem;
+    font-family: "Iceland", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.checkout:hover{
+    background: darkgray;
+}
+.header-width{
+    width: 5rem;
+}
+.cart-container-scroll{
+    overflow-y: auto;
+    width: 250%;
+}
