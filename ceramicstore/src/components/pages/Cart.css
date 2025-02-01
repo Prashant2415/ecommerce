@@ -105,3 +105,9 @@
     overflow-y: auto;
     width: 250%;
 }
+.dialog{
+    position: absolute;
+    left: 22rem;
+    background: lightgray;
+    padding: 1rem 5rem;
+}
