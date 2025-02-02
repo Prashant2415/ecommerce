@@ -7,8 +7,17 @@ import Home from './components/pages/Home'
 import Product from './components/pages/Product'
 import Shop from './components/pages/Shop'
 import Cart from './components/pages/Cart'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchProduct } from './redux/productSlicer'
+import { useEffect } from 'react'
 
 function App() {
+  const dispatch = useDispatch();
+  const selector = useSelector((state)=> state.productSlicer.data);
+  useEffect(()=>{
+    dispatch(fetchProduct());
+  },[])
+  console.log(selector)
   const router = createBrowserRouter([
     {
       path: "/",

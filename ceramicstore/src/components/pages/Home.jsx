@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useNavigate} from "react-router-dom"
 import homeImage from "../../images/home.webp"
 import "./Pages.css"
 import { DummyData } from '../DummyData'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchProduct } from '../../redux/productSlicer'
 const Home = () => {
   const products = DummyData;
   const navigate = useNavigate();

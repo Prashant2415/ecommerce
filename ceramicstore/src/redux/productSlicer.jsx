@@ -1,11 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { DummyData } from "../components/DummyData";
 const data = DummyData;
+export const fetchProduct = createAsyncThunk('fetchProduct',async()=>{
+    const response = await fetch("http://localhost:8081/getProducts");
+    return response.json();
+})
+
 const productSlicer = createSlice({
     name: "productSlicer",
     initialState: {
         searchItem:"",
-        data
+        data: null,
+        isLoading: false,
+        isError: false
     },
     reducers: {
         addProduct: (state, action)=>{
@@ -21,9 +28,21 @@ const productSlicer = createSlice({
             }
         },
         searchProduct: (state, action)=>{
-            console.log(action.payload);
             state.searchItem = action.payload;
         }
+    },
+    extraReducers: (builder)=>{
+        builder.addCase(fetchProduct.pending, (state,action)=>{
+            state.isLoading = true;
+        })
+        builder.addCase(fetchProduct.fulfilled,(state,action)=>{
+            state.isLoading = false;
+            state.data= action.payload;
+        })
+        builder.addCase(fetchProduct.rejected,(state,action)=>{
+            console.log("Error ",action.payload)
+            state.isError = true;
+        })
     }
 })
 
