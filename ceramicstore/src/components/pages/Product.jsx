@@ -3,6 +3,7 @@ import { useLocation , Link} from 'react-router-dom'
 import "./Product.css"
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../redux/addtocartSlicer';
+import { toast, ToastContainer } from 'react-toastify';
 const Product = () => {
     const value = useLocation();
     const productDetail = value.state;
@@ -13,6 +14,11 @@ const Product = () => {
     const dispatch = useDispatch();
     const cartValue = useSelector((state)=> state.addtocartSlicer);
     console.log(cartValue)
+    const handleAddToCart = (productDetail)=>{
+        console.log(productDetail)
+        dispatch(addToCart(productDetail.product))
+        toast("Data added to the cart");
+    }
     return (
         <div className='product-item-container'>
             <div className="breadcrumb-container">
@@ -26,7 +32,12 @@ const Product = () => {
                     <p className='item-name p-top'>{productname}</p>
                     <p className='item-price p-top'>${price}</p>
                     <p className='item-description p-top'>{description}</p>
-                    <button className='add-to-cart' onClick={()=> dispatch(addToCart(productDetail))}>Add to Cart</button><br />
+                    <button className='add-to-cart' onClick={()=> {handleAddToCart(productDetail)}}>Add to Cart</button><br />
+                    <ToastContainer
+                    position="top-center"
+                    autoClose={1000}
+                    hideProgressBar={true}
+                    theme="dark"/>
                     <button className='buy-now'>Buy Now</button>
                 </div>
                     <div className="policy-container">

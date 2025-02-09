@@ -6,6 +6,8 @@ import { DummyData } from '../DummyData'
 import { useDispatch, useSelector } from 'react-redux'
 import productSlicer, { addProduct, searchProduct, sortProduct } from '../../redux/productSlicer'
 import { addToCart } from '../../redux/addtocartSlicer'
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Shop = () => {
     
     const navigate = useNavigate();
@@ -17,8 +19,12 @@ const Shop = () => {
     }
 
     const search = useSelector((state)=> state.productSlicer.searchItem);
-    const productData = products.filter((item)=> item.productname.toLowerCase().includes(search.toLowerCase()));
+    const productData = products?.filter((item)=> item?.productname?.toLowerCase().includes(search?.toLowerCase()));
 
+    const handleAddToCart = (productDetail)=>{
+        toast("Data added to the cart")
+        dispatch(addToCart(productDetail))
+    }
     return (
         <div className='shopping-container'>
             <div className="search-filter-container">
@@ -33,7 +39,7 @@ const Shop = () => {
                 </div>
             </div>
             <div className="shopping-product-container">
-                    {productData.map((product, index) => {
+                    {productData?.map((product, index) => {
                         return (
                             <div className="product-card shopping-card" key={index}>
                                 <div className="product-image-container" onClick={()=>{handleView(product)}}>
@@ -42,7 +48,12 @@ const Shop = () => {
                                 <div className="product-content">
                                     <p className='product-name'>{product.productname}</p>
                                     <p className='product-price'>{`$${product.price}`}</p>
-                                    <button className='product-view' onClick={()=>{dispatch(addToCart(product))}}>Add to Cart</button>
+                                    <button className='product-view' onClick={()=>{handleAddToCart(product)}}>Add to Cart</button>
+                                    <ToastContainer
+                                    position="top-center"
+                                    autoClose={1000}
+                                    hideProgressBar={true}
+                                    theme="dark"/>
                                 </div>
                             </div>
                         )
